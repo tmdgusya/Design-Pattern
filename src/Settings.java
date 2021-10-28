@@ -1,4 +1,6 @@
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
 
     /**
      * Class 밖에서 new 를 사용할 수 없도록 제어
@@ -15,6 +17,14 @@ public class Settings {
      */
     public static Settings getInstance() {
         return SettingsHolder.INSTANCE;
+    }
+
+    /**
+     * DeSerialize 할때 SingleTon 을 지키기 위해 선언
+     * @return SettingsHolder.INSTANCE
+     */
+    protected Object readResolve() {
+        return getInstance();
     }
 
 }
