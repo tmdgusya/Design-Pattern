@@ -1,6 +1,6 @@
 public class Settings {
 
-    private static final Settings INSTANCE = new Settings();
+    private static volatile Settings instance;
 
     /**
      * Class 밖에서 new 를 사용할 수 없도록 제어
@@ -8,11 +8,18 @@ public class Settings {
     private Settings() {}
 
     /**
-     * 외부에서 같은 인스턴스를 이용하도록 if 문 조건 추가
+     * Double Checked Locking
      * @return 외부에서 사용할 수 있는 인스턴스 제공
      */
-    public static synchronized Settings getInstance() {
-        return INSTANCE;
+    public static Settings getInstance() {
+        if (instance == null) {
+            synchronized (Settings.class) {
+                if (instance == null) {
+                    instance = new Settings();
+                }
+            }
+        }
+        return instance;
     }
 
 }
