@@ -2,22 +2,22 @@ package abstract_factory;
 
 public class Ship {
 
-    private WhiteAnchor anchor;
-    private WhiteWheel wheel;
+    private Anchor anchor;
+    private Wheel wheel;
 
-    public WhiteAnchor getAnchor() {
+    public Anchor getAnchor() {
         return anchor;
     }
 
-    public void setAnchor(WhiteAnchor anchor) {
+    public void setAnchor(Anchor anchor) {
         this.anchor = anchor;
     }
 
-    public WhiteWheel getWheel() {
+    public Wheel getWheel() {
         return wheel;
     }
 
-    public void setWheel(WhiteWheel wheel) {
+    public void setWheel(Wheel wheel) {
         this.wheel = wheel;
     }
 
