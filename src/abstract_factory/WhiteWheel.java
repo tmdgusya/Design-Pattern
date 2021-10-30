@@ -1,4 +1,4 @@
 package abstract_factory;
 
-public class WhiteWheel {
+public class WhiteWheel implements Wheel{
 }
