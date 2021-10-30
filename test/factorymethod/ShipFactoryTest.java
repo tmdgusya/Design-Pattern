@@ -13,7 +13,7 @@ class ShipFactoryTest {
     void makeWhiteShipFactoryTest() {
         Ship whiteShip = new WhiteShipFactory().orderShip("WhiteShip", "dev0jsh@gmail.com");
 
-        /**
+        /*
          * default Info Test
          */
         assertEquals(whiteShip.getName(), "whiteship");
@@ -26,7 +26,7 @@ class ShipFactoryTest {
     void makeBlackShipFactoryTest() {
         Ship whiteShip = new BlackShipFactory().orderShip("BlackShip", "dev0jsh@gmail.com");
 
-        /**
+        /*
          * default Info Test
          */
         assertEquals(whiteShip.getName(), "blackship");
