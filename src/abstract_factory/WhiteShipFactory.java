@@ -2,11 +2,17 @@ package abstract_factory;
 
 public class WhiteShipFactory implements ShipFactory {
 
+    private ShipPartsFactory shipPartsFactory;
+
+    public WhiteShipFactory(ShipPartsFactory shipPartsFactory) {
+        this.shipPartsFactory = shipPartsFactory;
+    }
+
     @Override
     public Ship createShip() {
         Ship ship = new WhiteShip();
-        ship.setAnchor(new WhiteAnchor());
-        ship.setWheel(new WhiteWheel());
+        ship.setAnchor(shipPartsFactory.createAnchor());
+        ship.setWheel(shipPartsFactory.createWheel());
         return ship;
     }
 
