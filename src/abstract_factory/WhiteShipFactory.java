@@ -2,7 +2,7 @@ package abstract_factory;
 
 public class WhiteShipFactory implements ShipFactory {
 
-    private ShipPartsFactory shipPartsFactory;
+    private final ShipPartsFactory shipPartsFactory;
 
     public WhiteShipFactory(ShipPartsFactory shipPartsFactory) {
         this.shipPartsFactory = shipPartsFactory;
