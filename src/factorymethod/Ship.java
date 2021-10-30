@@ -18,6 +18,18 @@ public class Ship {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     @Override
     public String toString() {
         return "Ship{" +
